@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+
+      <h1> Welcome to the longest word-game ! </h1>
+
+      <h3>Here is your grid :</h3>
+
+      <table style="width:100%">
+        <% @grid.each do |letter| %>
+          <tr><td><%= letter %></td></tr>
+        <% end %>
+      </table>
+
+      <h3>Here's your result:</h3>
+    </div>
+
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+
+      <p>Your word: <%= @attempt %></p>
+      <p>Time Taken to answer: <%= @result[:time] %></p>
+      <p>Translation: <%= @result[:translation] %></p>
+      <p>Your score:<%= @result[:score] %></p>
+      <p><%= @result[:message] %></p>
+
+      <button><a href="/game" class="btn btn-primary"> Play again? </a></button>
+
+    </div>
+  </div>
+
+  <br>
+</div>
+
+
+

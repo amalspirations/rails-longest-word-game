@@ -1,0 +1,36 @@
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+
+      <h1> Welcome to the longest word-game ! </h1>
+
+      <h3>Here is your grid :</h3>
+
+      <table style="width:100%">
+        <% @grid.each do |letter| %>
+          <tr><td><%= letter %></td></tr>
+        <% end %>
+      </table>
+
+      <h3>What's your best shot?</h3>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <form action="/score" method="post">
+        <input type="text" name="attempt" placeholder="Your attempt">
+        <input type="hidden" name="grid" value=<%= @grid.join %>>
+        <input type="hidden" name="time" value=<%= @start %>>
+        <input type="submit" class="btn btn-primary" value="Score">
+      </form>
+    </div>
+
+  </div>
+  <br>
+</div>
+
+
