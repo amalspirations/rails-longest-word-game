@@ -1,11 +1,15 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
+    <div class="col-xs-12">
 
-      <h1> Welcome to the longest word-game ! </h1>
+      <div class="title">
+        <h1> THE LONGEST WORD GAME </h1>
+      </div>
 
-      <h3>Here is your grid :</h3>
+      <hr>
+
+      <h3>Your letters:</h3>
 
       <table style="width:100%">
         <% @grid.each do |letter| %>
@@ -13,25 +17,63 @@
         <% end %>
       </table>
 
-      <h3>Here's your result:</h3>
+      <h3>Your result:</h3>
     </div>
 
   </div>
 
 
+  <div class="row">
+    <div class="col-xs-6">
+      <p class="result-lhs">Your word:</p>
+    </div>
+    <div class="col-xs-6">
+      <p class="result-rhs"><%= @attempt %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <p class="result-lhs">Time Taken to answer:</p>
+    </div>
+    <div class="col-xs-6">
+      <p class="result-rhs"><%= @result[:time] %> second(s)</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <p class="result-lhs">Translation to French:</p>
+    </div>
+    <div class="col-xs-6">
+      <p class="result-rhs"><%= @result[:translation] %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <p class="result-lhs">Your score:</p>
+    </div>
+    <div class="col-xs-6">
+      <p class="result-rhs"><%= @result[:score] %></p>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
-
-      <p>Your word: <%= @attempt %></p>
-      <p>Time Taken to answer: <%= @result[:time] %></p>
-      <p>Translation: <%= @result[:translation] %></p>
-      <p>Your score:<%= @result[:score] %></p>
-      <p><%= @result[:message] %></p>
-
-      <button><a href="/game" class="btn btn-primary"> Play again? </a></button>
-
+      <h3><%= @result[:message] %></h3>
     </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <a class="btn btn-primary" href="/game"> Play again? </a>
+    </div>
+  </div>
+
+  <div class="total-results">
+    <p>You have played <strong><%= @times %> times</strong></p>
+    <p>Your average score is <strong><%= @scores %></strong></p>
   </div>
 
   <br>

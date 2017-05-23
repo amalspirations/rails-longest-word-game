@@ -3,31 +3,48 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background-color: rgb(240, 240, 240);
-  font-family: sans-serif;
+  background-image: linear-gradient(135deg, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.4) 80%), url("http://blog.oxforddictionaries.com/wp-content/uploads/colorful-letters.jpg");
+  background-size: cover;
+  height: 100vh;
+  margin: 0 0;
+  font-family: Open-sans, sans-serif;
   text-align: center;
+  vertical-align: middle;
+  color: white;
 }
-
-h1 {
-  color: blue;
-  padding: 50px 50px;
-}
-
-h3 {
-  padding: 150px, 0, 0, 0;
-}
-
 .container {
-  width: 80vw;
-  margin: auto;
+  height: 100vh;
   text-align: center;
-  background-color: white;
-  border-radius: 5px;
+  vertical-align: middle;
+  color: white;
+  .title {
+    padding: 20px 0;
+    text-align: center;
+    vertical-align: middle;
+  }
+  h1 {
+    font-size: 30px;
+    font-weight: lighter;
+    opacity: 0.6;
+
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: lighter;
+    padding-bottom: 10px;
+  }
+  hr {
+  opacity: 0.3;
+  padding: 20px 0;
+ }
 }
 
 form {
-  display: block;
+  margin: 0 0;
   text-align: center;
+  input {
+    text-align: center;
+  }
 }
 
 tr {
@@ -35,8 +52,35 @@ tr {
 }
 
 td {
-  background-color: blue;
-  width: 5vh;
-  color: white;
-  border: 1px solid rgb(230, 230, 230);
+  background-color: #EEC024;
+  color: #0054AD;
+  font-weight: bold;
+  width: 6vw;
+  height: 3vh;
+  margin: 2vw;
+  border: 0.5px solid rgba(240, 240, 240, 0.5);
 }
+
+.result-lhs {
+  font-weight: lighter;
+  text-align: right;
+}
+.result-rhs {
+  font-weight: bold;
+  text-align: left;
+  color: white;
+}
+
+.total-results {
+  padding: 20px 20px 0 20px;
+  font-weight: lighter;
+}
+
+.btn {
+  margin: 10px 0 !important;
+  font-family: Open-sans, sans-serif;
+  &:hover {
+    opacity: 0.6 !important;
+  }
+}
+

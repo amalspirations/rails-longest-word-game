@@ -2,11 +2,15 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
+    <div class="col-xs-12">
 
-      <h1> Welcome to the longest word-game ! </h1>
+      <div class="title">
+        <h1> THE LONGEST WORD GAME </h1>
+      </div>
 
-      <h3>Here is your grid :</h3>
+      <hr>
+
+      <h3>Your letters:</h3>
 
       <table style="width:100%">
         <% @grid.each do |letter| %>
@@ -20,9 +24,9 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
+    <div class="col-xs-6 col-xs-offset-3">
       <form action="/score" method="post">
-        <input type="text" name="attempt" placeholder="Your attempt">
+        <input type="text" name="attempt" class="form-control" placeholder="Your attempt">
         <input type="hidden" name="grid" value=<%= @grid.join %>>
         <input type="hidden" name="time" value=<%= @start %>>
         <input type="submit" class="btn btn-primary" value="Score">
